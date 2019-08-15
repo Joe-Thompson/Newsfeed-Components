@@ -3,7 +3,7 @@
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
+    date: "Nov 5th, 2018",
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
         watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
@@ -23,8 +23,8 @@ const data = [
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
   {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
+    title: "Javascript and You, ES6",
+    date: "May 7th, 2019",
     firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -43,8 +43,8 @@ const data = [
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
+    title: "React vs Angular vs Vue",
+    date: "June 7th, 2019",
     firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
@@ -71,8 +71,8 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    title: "Professional Software Development in 2019",
+    date: "Jan 1st, 2019",
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,6 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Joe Thompson's thoughts on Lambda school thus far...",
+    date: "Aug 15th, 2019",
+    firstParagraph: `Coming into lambda my experanice in web development was very little, but the passion for programming and the coding was there.  
+                     I just happened to find the link to Lambda's site by chance and suddenly my journey was set in motion.  To prep my self for 
+                     Lambda I took a course on Udemy with Colt Steele (coolest name EVER!), which taught me the basics to get started.`,
+
+    secondParagraph: `I then went through the precourse work and the Lambda test to be accepted.  I had some background in coding just for fun
+                      a few years back, but not near enough to make it though all the precourse work without help from Google.`,
+
+    thirdParagraph: `I am now at the three month mark of the part time web dev course and am loving every second of it.  Some of the projects (like this one)
+                     have been a challenge, but after many hours of hard work nothing beats seeing something you wrote yourself run.  By chance I saw the very first 
+                     attempt at a site I created in the first section of the precourse work...wow.  If the early 2000's mySpace was still around I would be considerd
+                     a great designer, lol.`
   }
 ];
 
@@ -112,3 +127,55 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+let articles = document.querySelector('.articles');
+// create new article and append it to the parentNode
+data.forEach(item => {
+  articles.appendChild(createArticles(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+})
+
+
+ function createArticles(title, date, firstPara, secondPara, thirdPara) {
+  //Main div class article
+  let article = document.createElement('div');
+  article.classList.add('article');
+
+   //Title 
+  let header = document.createElement('h2');
+
+   // P 
+  let paraDate = document.createElement('p');
+  paraDate.classList.add('date');
+
+
+   //P tags
+  let firstParagraph = document.createElement('p');
+  let secondParagraph = document.createElement('p');
+  let thirdParagraph = document.createElement('p');
+  let span = document.createElement('span');
+
+
+   // Append child elements
+  article.appendChild(header);
+  article.appendChild(paraDate);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(span);
+
+   // TextContent for the elements
+  header.textContent = title;
+  paraDate.textContent = date;
+  firstParagraph.textContent = firstPara;
+  secondParagraph.textContent = secondPara;
+  thirdParagraph.textContent = thirdPara;
+  span.textContent = 'Expand Article';
+
+   //expand button
+  span.classList.add('expandButton');
+  // EventListener toggle class article-open.
+  span.addEventListener('click', () => article.classList.toggle('article-open'));
+
+   return article;
+
+ } 
