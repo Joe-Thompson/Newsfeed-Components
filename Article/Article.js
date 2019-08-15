@@ -85,6 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Joe Thompson's thoughts on Lambda school thus far...",
+    date: "Aug 15th, 2019",
+    firstParagraph: `Coming into lambda my experanice in web development was very little, but the passion for programming and the coding was there.  
+                     I just happened to find the link to Lambda's site by chance and suddenly my journey was set in motion.  To prep my self for 
+                     Lambda I took a course on Udemy with Colt Steele (coolest name EVER!), which taught me the basics to get started.`,
+
+    secondParagraph: `I then went through the precourse work and the Lambda test to be accepted.  I had some background in coding just for fun
+                      a few years back, but not near enough to make it though all the precourse work without help from Google.`,
+
+    thirdParagraph: `I am now at the three month mark of the part time web dev course and am loving every second of it.  Some of the projects (like this one)
+                     have been a challenge, but after many hours of hard work nothing beats seeing something you wrote yourself run.  By chance I saw the very first 
+                     attempt at a site I created in the first section of the precourse work...wow.  If the early 2000's mySpace was still around I would be considerd
+                     a great designer, lol.`
   }
 ];
 
